@@ -9,4 +9,4 @@
 
 ## bdp-laravel
 
-Developmental project using the Laravel framework in a Homestead (Vagrant) environment
+A local development project using the Laravel framework in a (Vagrant) Homestead environment
