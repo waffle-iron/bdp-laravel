@@ -7,7 +7,6 @@ php:
 before_script:
 - cp .env.travis .env
 - mysql -e 'create database homestead_test;'
-- sudo phpdismod -s cli xdebug
 - composer self-update
 - composer install --no-interaction
 - php artisan key:generate
