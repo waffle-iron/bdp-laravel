@@ -6,5 +6,6 @@
 /.idea
 Homestead.json
 Homestead.yaml
-.env*
+.env
+.env.travis
 .DS_Store
