@@ -1,4 +1,5 @@
 language: php
+sudo: required
 php:
 - 5.6
 - 7.0
@@ -6,6 +7,7 @@ php:
 before_script:
 - cp .env.travis .env
 - mysql -e 'create database homestead_test;'
+- phpenv config-rm xdebug.ini
 - composer self-update
 - composer install --no-interaction
 - php artisan key:generate
