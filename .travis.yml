@@ -1,14 +1,14 @@
 language: php
-
 php:
-  - 5.6
-
+- 5.6
 before_script:
-  - cp .env.travis .env
-  - mysql -e 'create database homestead_test;'
-  - composer self-update
-  - composer install --no-interaction
-  - php artisan key:generate
-
+- cp .env.travis .env
+- mysql -e 'create database homestead_test;'
+- composer self-update
+- composer install --no-interaction
+- php artisan key:generate
 script:
-  - vendor/bin/phpunit
+- vendor/bin/phpunit
+notifications:
+  slack:
+    secure: g258tpE9C3HrNNgBJanvPO81l2c/RBfCwAK+RpCDDvcsO9F48aVJkpk98bgy3eHZlOOQB+rm/Bzox1Zhha2xPcDAfjaUa9HM3jiAMLMt/5Hj/xQQnlifo61cVSJtps2tpPuQU1XeqVY/xJtYWCE7xUbzbhxfOx2dl2J6UqNxO3nh9Cdf3o/TU/dEKn+KLvpuYe1C4iGRECKvWK3BLAW6Fsnfn71Z8uSFYKkcJnNZbBXXxwS5TUfqyQfRVESCNxqiorUWhNUdh2erqfcNJFqF++grl3JqRM5LDkx34CjfYTbhssKQ9Hio7dAPk/UUJphH9A9N2RYuOraAFxXm3oOweJOP50uJIDwkSJxKp3AvqI6o2qjmv6P5dHXqhWRVfYwMHiZiqdzT996BFXJ7x+xaFMjPN+zGmpaa9LV1eDWKlhe8Tl8sgzlJsbmuLbij0ZGirSmESBqWbGlyRA67vSGEUDYjz0rfP1Ydv3OezWAXKf1bCJBrq+6IORFBwbADthzRB+qPhscnX+SP15oXxKD19CepCHw87iKZkQG0OK1v3ZwDwdUdUXq3SUnhcItUWG21SFaDqvMYB0Xj/cx4qsBKmU2ZJWF4xChrmz7g9O+FCBR49i632HiyaWKjkOwYzVBcJgiOU9gDUW5smSZF6qg0FImwifi+2I5NYgEXfOuzH4c=
