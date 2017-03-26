@@ -7,11 +7,7 @@ php:
 before_script:
 - cp .env.travis .env
 - mysql -e 'create database homestead_test;'
-- TEMP_PATH="$( mktemp --tmpdir --suffix=.ini -t php-no-debug.XXXXXXX )"
-- FILES="$( /usr/bin/env php -r 'echo php_ini_loaded_file() . "\n" . str_replace(",","", php_ini_scanned_files());' )"
-- cat $FILES | sed '/xdebug/d' > "$TEMP_PATH"
-- /usr/bin/env php -n -c "$TEMP_PATH" -d allow_url_fopen=On -d detect_unicode=Off /usr/local/Cellar/composer/1.4.1/libexec/composer.phar "$@"
-- rm -f "$TEMP_PATH"
+- sudo phpdismod -s cli xdebug
 - composer self-update
 - composer install --no-interaction
 - php artisan key:generate
